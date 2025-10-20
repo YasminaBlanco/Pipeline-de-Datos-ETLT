@@ -15,8 +15,8 @@ El repositorio se organiza en módulos de tecnología:
 Sigue estos pasos para poner en marcha toda la arquitectura en una máquina virtual o servidor dedicado
 
 Debes crearte una cuenta en [cloud.air](https://cloud.airbyte.com/) para la ingesta de datos de Riohacha.
-*Configurar la conexión de Airbyte con tu cuenta de AWS.*
-*Configurar la conexión de Airbyte con tu cuenta de OpenWeatherMap.*
+* Configurar la conexión de Airbyte con tu cuenta de AWS.*
+* Configurar la conexión de Airbyte con tu cuenta de OpenWeatherMap.*
     * Crear el builder de datos de OpenWeatherMap.
     * Crear el destino de datos de Riohacha (Bucket RAW).
     * Crear la conexión de Airbyte con tu cuenta de AWS. (Considerar que se debe dar el permiso por medio de IAM para que Airbyte pueda acceder a tu cuenta de AWS y escribir en tu Bucket S3).
