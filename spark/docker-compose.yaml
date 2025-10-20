@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  spark-server:
+    # Imagen se construye por el Docker File
+    build: .
+    container_name: spark-server
+    # configuracion de las variables de entorno
+    env_file: 
+      - .env
+    # Mapeo de puertos para acceder a la UI web de Spark (8080) y el servidor (7077).
+    # IMPORTANTE: Ya configuraste el túnel SSH para 8080, así que podrás acceder a la interfaz de Spark desde localhost:8080.
+    ports:
+      - "8080:8080"  # Interfaz web del Master de Spark
+      - "7077:7077"  # Puerto del Master de Spark
+      - "8888:8888"  # Puerto opcional
+    
+    # Sincronización de carpetas: La carpeta local del proyecto se mapea al contenedor.
+    # Esto permite que los scripts de Python y los datasets sean visibles dentro del contenedor Spark.
+    volumes:
+      - ./app:/app  # Mapea la carpeta actual (proyecto_etl) a /app dentro del contenedor
+    
+    # Configuración de ambiente para el Master de Spark
+    environment:
+      # Definimos este contenedor como el Master
+      - SPARK_MODE=master
+      
+      # Configuraciones de seguridad (como se ve en tu imagen, deshabilitadas para desarrollo local)
+      - SPARK_RPC_AUTHENTICATION_ENABLED=no
+      - SPARK_RPC_ENCRYPTION_ENABLED=no
+      - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
+      - SPARK_SSL_ENABLED=no
