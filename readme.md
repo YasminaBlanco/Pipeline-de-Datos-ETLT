@@ -27,9 +27,9 @@ Debes crearte una cuenta en [cloud.air](https://cloud.airbyte.com/) para la inge
 Recomendamos usar una instancia con al menos **8GB de RAM** y **2 vCPUs** para asegurar que todos los servicios de Spark, Kafka y Airflow se ejecuten sin problemas de memoria.
 
 Debes crear  tres instancias EC2 para ejecutar toda la arquitectura:
-1. - Spark
-2. - Kafka
-3. - Airflow
+1.  Spark
+2.  Kafka
+3.  Airflow
 
 1.  **Crear una instancia AWS EC2:** Accede a la página de instancias en la consola de AWS y crea una nueva instancia EC2 con la siguiente configuración:
     * Nombre de instancia: Puede ser un nombre relevante para identificar la instancia.
@@ -121,7 +121,7 @@ Una vez que Docker y las variables de entorno están configuradas
     ```
     El contenedor deben mostrar el estado `up`.
 
-### 🌐 Acceso a las Interfaces Web
+### Acceso a las Interfaces Web
 
 Una vez levantados los servicios, puedes acceder a las herramientas:
 
