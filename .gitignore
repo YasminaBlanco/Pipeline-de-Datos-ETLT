@@ -1,0 +1,112 @@
+-------------------------------------------------------------------
+
+1. Variables de Entorno y Claves Secretas
+
+-------------------------------------------------------------------
+
+Contiene AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY y API_KEY de OpenWeatherMap.
+
+¡NUNCA deben subirse al repositorio público!
+
+.env
+
+Archivos de credenciales o configuración específica de Airflow/Spark
+
+airflow/secrets.yaml
+spark/.s3cfg
+
+-------------------------------------------------------------------
+
+2. Archivos de Python y Entornos Virtuales
+
+-------------------------------------------------------------------
+
+Ignorar entornos virtuales
+
+venv/
+.venv/
+env/
+
+Archivos de caché de Python
+
+pycache/
+*.pyc
+*.pyd
+*.pyo
+
+-------------------------------------------------------------------
+
+3. Datos Generados y Logs
+
+-------------------------------------------------------------------
+
+Si tu proyecto genera archivos locales de log
+
+*.log
+logs/
+
+Archivos de datos temporales (si se usan)
+
+*.csv
+*.json
+*.parquet
+tmp/
+temp/
+
+Directorios de Checkpoints de Spark/Kafka (muy pesados)
+
+checkpoints/
+/spark/data/
+
+-------------------------------------------------------------------
+
+4. Airflow Específico
+
+-------------------------------------------------------------------
+
+Directorios de Airflow creados por el runtime (logs de tareas, PID files)
+
+airflow/logs/
+airflow/dags/logs/
+airflow/airflow.cfg
+airflow/webserver_config.py
+airflow.db  # Base de datos SQLite de Airflow
+
+-------------------------------------------------------------------
+
+5. IDEs y Sistemas Operativos
+
+-------------------------------------------------------------------
+
+macOS
+
+.DS_Store
+
+Windows
+
+Thumbs.db
+
+VS Code
+
+.vscode/
+
+IntelliJ / PyCharm
+
+.idea/
+*.iml
+
+-------------------------------------------------------------------
+
+6. Docker (Archivos generados por el runtime)
+
+-------------------------------------------------------------------
+
+No aplica si usas volúmenes nombrados, pero es bueno incluirlos
+
+si algún volumen de datos reside localmente.
+
+volume/
+
+spark-connection.pem
+airflow-connection.pem
+kafka.pem
